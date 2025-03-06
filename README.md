@@ -143,6 +143,7 @@ wx:if  热门搜索和搜索结果进行切换 显示隐藏
 请求示例：`https://apis.netstart.cn/haokan/comment/list?did=128&pn=1&ps=20`
 
 【显示用户头像uhead 用户昵称uname 用户评论content 该评论点赞数like_count 该评论回复数reply_count 是否点赞has_like 。当头像图片获取失败则使用/image/user.png。点赞和回复靠右显示，图标使用icon 属性like-o和comment-o。按钮显示全部精彩评论，点击显示全部精彩评论，就把所有页码的评论都显示出来。设置一个悬浮按钮在展开所有评论之后显示，用来收起所有评论】
+
 <img src="readme_pic\image-20241226213832816.png" alt="image-20241226213832816" width="25%;" /><img src="readme_pic\image-20241226213838210.png" alt="image-20241226213838210" width="25%;" /><img src="readme_pic\image-20241227005135483.png" alt="image-20241227005135483" width="25%;" />
 
 
