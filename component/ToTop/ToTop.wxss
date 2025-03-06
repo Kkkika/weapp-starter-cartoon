@@ -1,0 +1,30 @@
+/* component/ToTop/ToTop.wxss */
+.to-top {
+  /* 设置组件的宽度和高度为70rpx，rpx是微信小程序中的尺寸单位，可以根据屏幕宽度自动缩放 */
+  width: 70rpx;
+  height: 70rpx;
+  /* 设置背景颜色为半透明的灰色 */
+  background-color: rgba(128, 128, 128, 0.3);
+  /* 设置边框圆角为50%，使得组件的边缘呈现圆形 */
+  border-radius: 50%;
+  /* 使用flex布局，使得子元素可以在父元素中灵活排列 */
+  display: flex;
+  /* 将内容在主轴（默认是垂直方向）上居中对齐 */
+  justify-content: center;
+  /* 将内容在侧轴（默认是水平方向）上居中对齐 */
+  align-items: center;
+  /* 固定定位，相对于浏览器窗口进行定位 */
+  position: fixed;
+  /* 距离右侧边缘30rpx */
+  right: 30rpx;
+  /* 距离顶部80%，这里80%是相对于视口高度的百分比 */
+  top: 80%;
+  /* 层级 */
+  z-index: 999;
+}
+
+.to-img {
+  /* 设置图片的宽度和高度为65rpx */
+  width: 65rpx;
+  height: 65rpx;
+}

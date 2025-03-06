@@ -1,0 +1,71 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/rank/rank",
+    "pages/cate/cate",
+    "pages/mine/mine",
+    "pages/search/search",
+    "pages/detail/detail",
+    "pages/cartoon/cartoon"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "KC漫画",
+    "navigationBarBackgroundColor": "#ffffff"
+  },
+  "style": "v2",
+  "rendererOptions": {
+    "skyline": {
+      "defaultDisplayBlock": true,
+      "disableABTest": true,
+      "sdkVersionBegin": "3.0.0",
+      "sdkVersionEnd": "15.255.255"
+    }
+  },
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#ff4796",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "推荐",
+        "iconPath": "./image/home.png",
+        "selectedIconPath": "./image/home-active.png"
+      },
+      {
+        "pagePath": "pages/rank/rank",
+        "text": "榜单",
+        "iconPath": "./image/rank.png",
+        "selectedIconPath": "./image/rank-active.png"
+      },
+      {
+        "pagePath": "pages/cate/cate",
+        "text": "分类",
+        "iconPath": "./image/cate.png",
+        "selectedIconPath": "./image/cate-active.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "./image/mine.png",
+        "selectedIconPath": "./image/mine-active.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "van-search": "@vant/weapp/search/index",
+    "van-row": "@vant/weapp/row/index",
+    "van-col": "@vant/weapp/col/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-card": "@vant/weapp/card/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index"
+  }
+}

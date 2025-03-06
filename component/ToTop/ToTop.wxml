@@ -1,0 +1,4 @@
+<!-- component/ToTop/ToTop.wxml -->
+<view class="to-top">
+  <image class="to-img" src="/image/scroll-to-top.png" bind:tap="toTop" />
+</view>

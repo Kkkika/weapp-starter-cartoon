@@ -1,0 +1,31 @@
+/* pages/cate/cate.wxss */
+.cate-lists {
+  padding: 20rpx;
+}
+
+.t-img {
+  height: 316rpx;
+  border-radius: 10rpx;
+}
+
+.title {
+  margin: 10rpx 0 20rpx;
+}
+
+.tag {
+  font-size: 30rpx;
+  color: #666;
+  margin-bottom: 20rpx;
+}
+
+.all-category {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+}
+
+.cate {
+  padding-top: 312rpx;
+}

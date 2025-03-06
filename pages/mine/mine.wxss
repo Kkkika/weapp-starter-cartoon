@@ -1,0 +1,61 @@
+/* pages/mine/mine.wxss */
+.mine {
+  padding: 0rpx;
+}
+ 
+.custom-icon {
+  width: 80px;
+  height: 100px;
+}
+ 
+.van-cell {
+  display: flex;
+  align-items: center;
+}
+ 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20rpx;
+}
+ 
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+ 
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 30rpx;
+  /* 每个 item 占据 30% 的宽度 */
+  width: 30%;
+}
+ 
+/* 导航栏的图标样式 */
+.icon {
+  width: 70rpx;
+  height: 70rpx;
+  margin-bottom: 10rpx;
+}
+ 
+.text {
+  /* 设置字体大小 */
+  font-size: 10px;
+  /* 设置文本对齐方式 */
+  text-align: center;
+  /* 设置行高 */
+  line-height: 24px;
+}
+ 
+.right-icon-text {
+  /* 设置字体大小 */
+  font-size: 10px;
+  /* 浅灰色 */
+  color: #c0c0c0;
+}

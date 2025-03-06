@@ -1,0 +1,70 @@
+<!--pages/search/search.wxml-->
+<view class="search">
+  <!-- 搜索框开始 -->
+  <!-- clearable 是否启用清除控件,小叉叉 默认为true -->
+  <van-search vlaue="{{ keyword }}" shape="round" background="#fff" placeholder="{{defaultSearchHint}}" use-action-slot bind:change="onChange" bind:search="onSearch">
+    <!-- <image class="left-img" bind:tap="goBack" src="../../image/左箭头.png" /> -->
+    <view slot="action" bind:tap="onSearch" style="padding:0 30rpx">搜索</view>
+  </van-search>
+  <!-- 搜索框结束 -->
+
+  <!-- 搜索历史视图开始 -->
+  <view class="history" wx:if="{{historyList.length>0 && showSearchTips}}">
+    <!-- 标题 -->
+    <view class="title">
+      <view class="text">搜索历史</view>
+      <!-- 使用 van-icon 组件显示删除图标 -->
+      <view class="remove" wx:if="{{!showClearAllButton}}" bindtap="showClearAll">
+        <van-icon name="delete-o" size="21" />
+      </view>
+      <!-- 清空全部按钮 -->
+      <view class="clear-all" wx:if="{{showClearAllButton}}">
+        <view class="clear-confirm" wx:if="{{showClearAllButton}}" bindtap="clearAllHistory">
+          清空全部
+        </view>
+        <view class="clear-cancel" wx:if="{{showClearAllButton}}" bindtap="hideClearAll">
+          取消
+        </view>
+      </view>
+    </view>
+    <!-- 内容区域 -->
+    <view class="content">
+      <!-- 循环显示搜索历史中的每一条记录 -->
+      <view class="item" wx:for="{{historyList}}" wx:key="index" data-keyword="{{item}}" bindtap="onKeywordTap">{{item}}
+        <!-- 删除按钮 -->
+        <van-icon name="cross" size="20" wx:if="{{showClearAllButton}}" bind:click="deleteKeyword" data-index="{{index}}" />
+      </view>
+    </view>
+  </view>
+  <!-- 搜索历史视图结束 -->
+
+  <!-- 热门搜索开始 -->
+  <view class="hot-search" wx:if="{{showSearchTips}}">
+    <view class=" title">
+      <view class="text">热门搜索</view>
+      <view class="hot-list">
+        <view class="hot-item" wx:for="{{hotSearchList}}" wx:key="index" data-keyword="{{item.title}}" bindtap="onKeywordTap">{{item.title}}</view>
+      </view>
+
+    </view>
+  </view>
+  <!-- 热门搜索结束 -->
+
+  <!-- 搜索结果开始 -->
+  <view class="search-results" wx:if="{{searchResults.length}}">
+    <view class="result-item">搜索结果：{{searchResults.length}}</view>
+    <van-row gutter="10">
+      <van-col span="8" wx:for="{{searchResults}}" wx:key="index" wx:for-item="item">
+        <image class="r-img" src="{{item.pic}}" bind:tap="goDetail" data-id="{{item.id}}" referrerPolicy="no-referrer" />
+        <view class="title one-txt">{{item.title}}</view>
+        <view class="tag one-txt">{{item.tag}}</view>
+      </van-col>
+    </van-row>
+  </view>
+  <!-- 没有搜索结果时显示 -->
+  <view class="no-results" wx:if="{{noResults}}">
+    <view class="no-results-text">搜索不到相关内容</view>
+    {{searchResults.length}}
+  </view>
+  <!-- 搜索结果结束 -->
+</view>

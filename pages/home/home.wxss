@@ -1,0 +1,73 @@
+/* pages/home/home.wxss */
+/* 1px == 2rpx  */
+image {
+  width: 100%;
+  display: block;
+}
+
+swiper {
+  height: 592rpx;
+}
+
+.b-img {
+  height: 592rpx;
+}
+
+.tab {
+  padding: 20rpx;
+}
+
+.tab-list {
+  /* 设置每个列表项的底部外边距，增加列表项之间的空间 */
+  margin-bottom: 16rpx;
+}
+
+.name {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.t-img {
+  height: 316rpx;
+  border-radius: 16rpx;
+}
+
+.title {
+  margin: 10rpx 0;
+}
+
+.tag {
+  font-size: 25rpx;
+  color: #666;
+  margin-bottom: 20rpx;
+}
+
+.button-group {
+  display: flex;
+  /* 子元素之间的间距均匀分布 */
+  justify-content: space-between;
+  /* 使用 gap 属性来增加按钮之间的间距 */
+  gap: 10px;
+}
+
+.button-group button {
+  /* 使用flex: 1使得每个按钮占据相等的空间，确保它们并排显示且宽度相同 */
+  flex: 1;
+  /* 设置按钮的背景颜色 */
+  background-color: #f2f2f2;
+  /* 设置按钮的字体大小 */
+  font-size: 10px;
+  /* 设置按钮的文字颜色 */
+  color: #666;
+  /* 移除默认的边框 */
+  border: none;
+  /* 移除点击时的默认轮廓 */
+  outline: none;
+  /* 设置按钮的内边距，确保文字与按钮边缘有一定的距离 */
+  padding: 8px;
+  /* 设置文本居中对齐 */
+  text-align: center;
+  /* 添加圆角效果 */
+  border-radius: 30rpx;
+}

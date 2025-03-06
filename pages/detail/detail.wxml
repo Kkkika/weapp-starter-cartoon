@@ -1,0 +1,104 @@
+<!--pages/detail/detail.wxml-->
+<view class="detail">
+  <!-- 背景开始 -->
+  <view class="bg">
+    <image src="{{detail.pic}}" referrerPolicy="no-referrer" mode="aspectFill" />
+    <image bind:tap="goBack" src="../../image/左箭头.png" class="left-img" />
+    <view class="desc">
+      <view class="left">
+        <view class="title">{{detail.title}}</view>
+        <view class="author">{{detail.author}}</view>
+      </view>
+      <view class="right">
+        <view class="urge">{{detail.urge_num}}次催更</view>
+        <view class="tag">{{detail.tag}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 背景结束 -->
+
+  <!-- 信息开始 -->
+  <view class="info">{{detail.info}}</view>
+  <!-- 信息结束 -->
+
+  <!-- 数字列表开始 -->
+  <view class="number-lists">
+    <view class="number-list">
+      <view class="number">{{detail.num_fav}}</view>
+      <view class="name">收藏数</view>
+    </view>
+    <view class="number-list">
+      <view class="number">{{detail.num_love}}</view>
+      <view class="name">点赞数</view>
+    </view>
+    <view class="number-list">
+      <view class="number">{{detail.num_look}}</view>
+      <view class="name">人气数</view>
+    </view>
+  </view>
+  <!-- 数字列表结束 -->
+
+  <!-- 目录开始 -->
+  <view class="chapter">
+    <view class="top">
+      <view class="top-left">漫画全集</view>
+      <view class="top-right">目录</view>
+    </view>
+    <scroll-view scroll-x>
+      <view class="lists">
+        <view class="list" wx:for="{{listChapter}}" wx:key="index">
+          <image bind:tap="goCartoon" data-index="{{index}}" data-name="{{item.name}}" data-id="{{item.id}}" referrerPolicy="no-referrer" src="{{item.cover}}" mode="aspectFill" />
+          <view class="one-txt c-name {{active==index?'active':''}}">{{item.name}}</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 目录结束 -->
+
+  <!-- 评论开始 -->
+  <view class="comments">
+    <view class="comments-title">热门评论</view>
+    <view class="comment-list">
+      <view class="comment" wx:for="{{comments}}" wx:key="id">
+        <image class="comment-avatar" src="{{item.uhead}}" mode="aspectFill" referrerPolicy="no-referrer" binderror="onAvatarError" data-id="{{item.id}}" />
+        <view class="comment-info">
+          <view class="comment-user">{{item.uname}}</view>
+          <view class="comment-text">{{item.content}}</view>
+          <view class="comment-actions">
+            <view class="comment-like" bind:tap="likeComment" data-id="{{item.id}}">
+              <van-icon name="like-o" size="21" style="color: {{item.has_like ? '#ff4796' : '#999'}};" />
+              {{item.like_count}}
+            </view>
+            <view class="comment-reply">
+              <van-icon name="comment-o" size="21" />
+              {{item.reply_count}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <button bind:tap="showAllComments">
+      <!-- 如果 allCommentsLoaded 为 true，则显示 '暂无更多评论'；否则显示 '查看全部精彩评论' -->
+      {{allCommentsLoaded ? '暂无更多评论' : '查看全部精彩评论'}}
+    </button>
+    <button class="comments-toggle" bind:tap="toggleComments" wx:if="{{allCommentsLoaded}}">收起评论</button>
+  </view>
+  <!-- 评论结束 -->
+
+  <!-- 相关漫画推荐开始 -->
+  <view class="recommendations">
+    <view class="recommendations-title">相关漫画推荐</view>
+    <van-row gutter="10">
+      <van-col span="8" wx:for="{{recommendations}}" wx:key="index" wx:for-item="item">
+        <image bind:tap="goDetail" data-id="{{item.id}}" src="{{item.pic}}" referrerPolicy="no-referrer" class="r-img" />
+        <view class="title one-txt">{{item.title}}</view>
+        <view class="tag one-txt">{{item.tag}}</view>
+      </van-col>
+    </van-row>
+  </view>
+  <!-- 相关漫画推荐结束 -->
+
+  <!-- 回到顶部开始 -->
+  <ToTop></ToTop>
+  <!-- 回到顶部结束 -->
+</view>

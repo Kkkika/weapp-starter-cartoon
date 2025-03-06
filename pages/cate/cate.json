@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "ToTop": "../../component/ToTop/ToTop",
+    "CateNav": "../../component/CateNav/CateNav"
+  }
+}

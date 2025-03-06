@@ -1,0 +1,6 @@
+<!-- component/CateNav/CateNav.wxml -->
+<!-- 所有分类开始 -->
+<view class="all-cakes">
+  <view class="all-cake {{wc==index?'active':''}}" wx:for="{{wf}}" wx:key="index" bind:tap="toggle" data-index="{{index}}">{{item.title}}</view>
+</view>
+<!-- 所有分类结束 -->

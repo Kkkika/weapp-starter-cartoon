@@ -1,0 +1,19 @@
+/**app.wxss**/
+image {
+  width: 100%;
+  display: block;
+}
+
+page {
+  font-family: "宋体";
+  /* 设置页面字体为宋体 */
+}
+
+.one-txt {
+  white-space: nowrap;
+  /* 文本不换行 */
+  overflow: hidden;
+  /* 隐藏溢出的部分 */
+  text-overflow: ellipsis;
+  /* 用省略号表示溢出的文本 */
+}

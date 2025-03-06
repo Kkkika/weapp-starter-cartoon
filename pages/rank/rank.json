@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "ToTop": "../../component/ToTop/ToTop"
+  }
+}

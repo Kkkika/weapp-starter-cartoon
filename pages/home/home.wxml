@@ -1,0 +1,50 @@
+<!--pages/home/home.wxml-->
+<!-- div ==> view  img ==> image -->
+<view class="home">
+  <!-- 搜索框开始 -->
+  <!-- 使用Vant Weapp组件库中的搜索框组件 -->
+  <!-- bind:click-input="onClickInput"表示 点击搜索区域时触发onClickInput函数 -->
+  <van-search shape="round" background="#fff" placeholder="{{defaultSearchHint}}" bind:click-input="onClickInput">
+  </van-search>
+  <!-- 搜索框结束 -->
+
+  <!-- 轮播图开始 -->
+  <!-- 使用swiper组件创建轮播图，自动播放，间隔3000ms -->
+  <swiper indicator-dots indicator-active-color="#ff4796" autoplay interval="3000" circular>
+    <!-- wx:for="{{数据}}" wx:key 默认 index下标   item每一项 -->
+    <!-- 使用wx:for指令循环渲染bannerList数组中的每项数据 -->
+    <swiper-item wx:for="{{bannerList}}" wx:key="index">
+      <!-- 使用image组件显示图片，并绑定点击事件goDetail -->
+      <image class="b-img" src="{{item.pic}}" bind:tap="goDetail" data-id="{{item.did}}" referrerPolicy="no-referrer" />
+    </swiper-item>
+  </swiper>
+  <!-- 轮播图结束 -->
+
+  <!-- 列表开始 -->
+  <view class="tab">
+    <!-- 每一列 -->
+    <view class="tab-list" wx:for="{{tabList}}" wx:key="index" wx:if="{{item.list.length}}">
+      <!-- 标题 -->
+      <view class="name">{{item.name}}</view>
+      <!-- 使用Vant Weapp的栅格布局展示列表项 -->
+      <van-row gutter="10">
+        <van-col span="8" wx:for="{{item.list}}" wx:key="index2" wx:for-item="item2" wx:for-index="index2">
+          <image class="t-img" src="{{item2.pic}}" bind:tap="goDetail" data-id="{{item2.id}}" referrerPolicy="no-referrer" />
+          <view class="title one-txt">{{item2.title}}</view>
+          <view class="tag one-txt">{{item2.tag}}</view>
+        </van-col>
+      </van-row>
+      <!-- 按钮组开始 -->
+      <view class="button-group">
+        <button bindtap="onChange" data-id="{{item.id}}">换一换</button>
+        <button bindtap="onMore" data-id="{{item.id}}">查看更多</button>
+      </view>
+      <!-- 按钮组结束 -->
+    </view>
+  </view>
+  <!-- 列表结束 -->
+
+  <!-- 回到顶部开始 -->
+  <ToTop></ToTop>
+  <!-- 回到顶部结束 -->
+</view>

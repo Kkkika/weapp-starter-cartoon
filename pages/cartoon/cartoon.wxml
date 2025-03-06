@@ -1,0 +1,19 @@
+<!--pages/cartoon/cartoon.wxml-->
+<view class="cartoon" bind:tap="toggle">
+
+<!-- 回到顶部开始 -->
+<ToTop></ToTop>
+<!-- 回到顶部结束 -->
+
+<!-- 图片开始 -->
+<image referrerPolicy="no-referrer" wx:for="{{imgList}}" src="{{item.url}}" mode="widthFix" />
+<!-- 图片结束 -->
+
+<!-- 导航栏开始 -->
+<view class="nav" wx:if="{{isShow}}">
+    <view>{{title}}</view>
+    <image bind:tap="goBack" src="../../image/左箭头.png"/>
+</view>
+<!-- 导航栏结束 -->
+
+</view>

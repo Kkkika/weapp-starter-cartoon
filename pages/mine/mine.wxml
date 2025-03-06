@@ -1,0 +1,96 @@
+<!-- pages/mine/mine.wxml -->
+<view class="mine">
+  <!-- 登录开始 -->
+  <!-- 使用Vant Weapp的cell组件作为登录/注册按钮 -->
+  <van-cell class="login" title="点击登录/注册" bind:click="goIndex" is-link>
+    <!-- slot="icon" 表示图片显示在单元格的左侧 -->
+    <!-- mode属性设置图片的裁剪和缩放模式，referrerPolicy属性用于控制发出的请求是否携带referrer -->
+    <image class="custom-icon" src="/image/user.png" slot="icon" mode="aspectFit" referrerPolicy="no-referrer" />
+  </van-cell>
+  <!-- 登陆结束 -->
+
+  <!-- 菜单-小页面跳转开始 -->
+  <!-- 视图容器，用于包含导航项 -->
+  <view class="container">
+    <!-- 第一行 -->
+    <view class="row">
+      <navigator url="/pages/bookshelf/bookshelf" class="item">
+        <image class="icon" src="/image/bookshelf-icon.png" />
+        <text class="text">书架</text>
+      </navigator>
+      <navigator url="/pages/dailyupdate/dailyupdate" class="item">
+        <image class="icon" src="/image/dailyupdate-icon.png" />
+        <text class="text">每日更新</text>
+      </navigator>
+      <navigator url="/pages/readinghistory/readinghistory" class="item">
+        <image class="icon" src="/image/readinghistory-icon.png" />
+        <text class="text">浏览历史</text>
+      </navigator>
+    </view>
+    <!-- 第二行 -->
+    <view class="row">
+      <navigator url="/pages/favorites/favorites" class="item">
+        <image class="icon" src="/image/favorites-icon.png" />
+        <text class="text">点赞的漫画</text>
+      </navigator>
+      <navigator url="/pages/downloads/downloads" class="item">
+        <image class="icon" src="/image/downloads-icon.png" />
+        <text class="text">我的下载</text>
+      </navigator>
+      <navigator url="/pages/messages/messages" class="item">
+        <image class="icon" src="/image/messages-icon.png" />
+        <text class="text">我的消息</text>
+      </navigator>
+    </view>
+    <!-- 第三行 -->
+    <view class="row">
+      <navigator url="/pages/author/author" class="item">
+        <image class="icon" src="/image/author-icon.png" />
+        <text class="text">成为作家</text>
+      </navigator>
+      <navigator url="/pages/merchandise/merchandise" class="item">
+        <image class="icon" src="/image/merchandise-icon.png" />
+        <text class="text">周边商城</text>
+      </navigator>
+      <navigator url="/pages/wallet/wallet" class="item">
+        <image class="icon" src="/image/wallet-icon.png" />
+        <text class="text">我的钱包</text>
+      </navigator>
+    </view>
+    <!-- 第四行 -->
+    <view class="row">
+      <navigator url="/pages/feedback/feedback" class="item">
+        <image class="icon" src="/image/feedback-icon.png" />
+        <text class="text">反馈与帮助</text>
+      </navigator>
+      <navigator url="/pages/productculture/productculture" class="item">
+        <image class="icon" src="/image/productculture-icon.png" />
+        <text class="text">KC指南</text>
+      </navigator>
+      <!-- 空白占位 -->
+      <navigator class="item">
+        <image class="icon" />
+        <text class="text"></text>
+      </navigator>
+    </view>
+  </view>
+  <!-- 菜单-小页面跳转结束 -->
+
+  <!-- 其他功能开始 -->
+  <!-- cell实现 -->
+  <van-cell title="免流服务">
+    <!-- slot="right-icon"：表示文本显示在单元格的右侧 -->
+    <text slot="right-icon" class="right-icon-text">流量免费任性看漫画</text>
+  </van-cell>
+  <van-cell title="0元抽奖">
+    <text slot="right-icon" class="right-icon-text">K币会员等你来抽</text>
+  </van-cell>
+  <van-cell title="青少年模式">
+    <text slot="right-icon" class="right-icon-text">已开启</text>
+  </van-cell>
+  <!-- is-link属性表示这是一个链接样式的单元格 -->
+  <!-- icon属性设置了单元格的图标 -->
+  <van-cell title="设置" is-link icon="setting" />
+  <!-- 其他功能结束 -->
+
+</view>

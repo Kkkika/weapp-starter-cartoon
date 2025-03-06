@@ -1,0 +1,40 @@
+<!--pages/rank/rank.wxml-->
+<view class="rank">
+    <!-- 回到顶部开始 -->
+    <ToTop></ToTop>
+    <!-- 回到顶部结束 -->
+
+    <!-- 所有榜单开始 -->
+    <view class="all-rank">
+        <van-tabs active="{{ active }}" bind:change="onChange">
+            <van-tab title="{{item.name}}" wx:for="{{allRank}}" wx:key="index"></van-tab>
+        </van-tabs>
+    </view>
+    <!-- 所有榜单结束 -->
+
+    <!-- 榜单列表开始 -->
+    <view class="rank-lists">
+        <view class="rank-list" wx:for="{{rankList}}" wx:key="index">
+            <van-card  desc="{{item.lastchapter}}" title="{{item.title}}">   
+                <!-- 图片插槽 -->
+                <view slot="thumb">
+                   <image src="{{item.pic}}" class="t-img" bind:tap="goDetail" data-id="{{item.id}}" referrerPolicy="no-referrer"/>
+                </view>
+                <!-- 作者 标签 -->
+                <view slot="num">
+                    <view class="author">{{item.author}}</view>
+                    <view class="tag">{{item.tag}}</view>
+                </view>
+                <!-- 排名 -->
+                <view slot="footer" >
+                   <image wx:if="{{index==0}}" src="/image/gold.png" class="f-img"/>
+                   <image wx:elif="{{index==1}}" src="/image/silver.png" class="f-img"/>
+                   <image wx:elif="{{index==2}}" src="/image/bronze.png" class="f-img"/>
+                   <view  wx:else class="rank-font">{{index+1}}</view>
+                </view>
+            </van-card>
+        </view>
+    </view>
+    <!-- 榜单列表结束 -->
+
+</view>

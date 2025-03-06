@@ -1,0 +1,28 @@
+<!--pages/cate/cate.wxml-->
+<view class="cate">
+  <!-- 回到顶部开始 -->
+  <ToTop></ToTop>
+  <!-- 回到顶部结束 -->
+
+  <!-- 所有分类开始 -->
+  <view class="all-category">
+    <CateNav wf="{{allCate.category}}" wc="{{cateIndex}}" tag="cateIndex" bind:Click="clickTag"></CateNav>
+    <CateNav wf="{{allCate.end}}" wc="{{endIndex}}" tag="endIndex" bind:Click="clickTag"></CateNav>
+    <CateNav wf="{{allCate.sort}}" wc="{{sortIndex}}" tag="sortIndex" bind:Click="clickTag"></CateNav>
+  </view>
+  <!-- 所有分类结束 -->
+
+  <!-- 分类列表开始 -->
+  <view class="cate-lists">
+    <van-row gutter="10">
+      <van-col span="8" wx:for="{{cateList}}" wx:key="index">
+        <image bind:tap="goDetail" data-id="{{item.id}}" src="{{item.pic}}" referrerPolicy="no-referrer" class="t-img" />
+        <view class="title one-txt">{{item.title}}</view>
+        <view class="tag one-txt">{{item.lastchapter}}</view>
+      </van-col>
+    </van-row>
+  </view>
+  <!-- 分类列表结束 -->
+
+
+</view>

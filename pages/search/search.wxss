@@ -1,0 +1,130 @@
+/* pages/search/search.wxss */
+/* .van-search.left-img {
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  top: 50rpx;
+  left: 10rpx;
+  z-index: 99;
+} */
+
+/* 搜索历史容器样式 */
+.history,
+.hot-search {
+  padding: 10rpx;
+}
+
+/* 搜索历史标题样式 */
+.history .title,
+.hot-search .title {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30rpx;
+  /* 灰色文字 */
+  color: #666;
+}
+
+/* 搜索历史标题中的文本样式 */
+.history .title .text,
+.hot-search .title .text {
+  font-size: 25rpx;
+}
+
+/* 搜索历史标题中的清空按钮样式 */
+.history .title .remove,
+.history .title .clear-all {
+  /* 较浅的灰色文字 */
+  color: #999;
+  display: flex;
+  /* 垂直居中 */
+  align-items: center;
+}
+
+/* 清空全部和取消按钮之间的距离调整 */
+.history .title .clear-confirm+.clear-cancel {
+  margin-left: 10rpx;
+}
+
+/* 搜索历史内容区域样式 */
+.history .content,
+.hot-search .hot-list {
+  /* 上下内边距 */
+  padding: 20rpx 0;
+  /* 使用弹性盒布局 */
+  display: flex;
+  /* 允许换行 */
+  flex-wrap: wrap;
+}
+
+/* 搜索历史内容项样式 */
+.history .content .item,
+.hot-search .hot-list .hot-item {
+  /* 背景颜色 */
+  background: rgb(238, 236, 236);
+  /* 文字颜色 */
+  color: #333;
+  /* 字体大小 */
+  font-size: 30rpx;
+  /* 内边距 */
+  padding: 8rpx 25rpx;
+  /* 外边距 */
+  margin: 0 20rpx 20rpx 0;
+  /* 圆角 */
+  border-radius: 50rpx;
+}
+
+/* 搜索历史内容项中的删除按钮样式 */
+.content .item .van-icon {
+  /* 删除按钮的颜色 */
+  color: rgb(200, 200, 200);
+  /* 背景颜色 */
+  background-color: rgb(223, 223, 223);
+  /* 圆形背景 */
+  border-radius: 50%;
+}
+
+/* 为删除按钮添加一个激活状态的样式 */
+.content .item .van-icon:active {
+  /* 点击时背景颜色更深 */
+  background-color: rgb(160, 160, 160);
+}
+
+/* hot-search内容项样式 */
+.hot-search .hot-list .hot-item {
+  /* 浅粉色背景 */
+  background: #f8d7da;
+}
+
+
+.search-results {
+  padding: 20rpx;
+}
+
+.result-item {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.r-img {
+  height: 316rpx;
+  border-radius: 16rpx;
+}
+
+.tag {
+  font-size: 25rpx;
+  color: #666;
+  margin-bottom: 20rpx;
+}
+
+.no-results {
+  text-align: center;
+  padding: 50rpx;
+}
+
+.no-results-text {
+  font-size: 36rpx;
+  color: #666;
+}

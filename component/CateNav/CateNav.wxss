@@ -1,0 +1,20 @@
+/* component/CateNav/CateNav.wxss */
+.all-cakes {
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 0 0 20rpx;
+}
+
+.all-cake {
+  margin: 0 24rpx 16rpx 0;
+  padding: 10rpx 12rpx;
+  font-size: 28rpx;
+  border-radius: 10rpx;
+  color: #666;
+}
+
+.all-cake.active {
+  color: #fff;
+  background-color: #ff7173;
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "ToTop": "../../component/ToTop/ToTop",
+    "van-icon": "@vant/weapp/icon/index"
+  },
+  "navigationStyle": "custom"
+}
